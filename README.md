@@ -4,7 +4,7 @@ A dynamic and responsive web application that allows users to post queries about
 
 ## 🌐 Live Site
 
-[Visit Live site](https://query-nest-two.vercel.app/)
+[Visit Live Website](https://query-nest-web-13121.web.app/)
 
 ## 🚀 Project Purpose
 
@@ -33,6 +33,7 @@ The Product Recommendation System helps users to:
 ### Extra Home Page Components
 - **TrendingDiscussions**: Highlights popular discussions.
 - **WhyChooseUs**: Emphasizes the platform's value and vision.
+- **TopContributors**: Showcases the most active or impactful users on the platform.
 
 ### UI/UX
 - Beautiful, responsive design for mobile, tablet, and desktop.
@@ -118,5 +119,4 @@ The Product Recommendation System helps users to:
 ## 👨‍💻 Author
 
 **Ashik Mahmud**  
-
 
