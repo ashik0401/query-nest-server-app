@@ -4,33 +4,33 @@ require('dotenv').config()
 const app = express()
 const jwt = require('jsonwebtoken');
 const port = process.env.PORT || 3000
-// const admin = require("firebase-admin");
+const admin = require("firebase-admin");
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 app.use(cors())
 app.use(express.json())
 
-// let serviceAccount = null;
+let serviceAccount = null;
 
-// try {
-//   const decoded = Buffer.from(process.env.FB_SERVICE_KEY, 'base64').toString('utf8');
-//   serviceAccount = JSON.parse(decoded);
-// } catch (e) {
-//   console.error("Failed to parse Firebase service account:", e.message);
-// }
+try {
+  const decoded = Buffer.from(process.env.FB_SERVICE_KEY, 'base64').toString('utf8');
+  serviceAccount = JSON.parse(decoded);
+} catch (e) {
+  console.error("Failed to parse Firebase service account:", e.message);
+}
 
-// if (serviceAccount) {
-//   admin.initializeApp({
-//     credential: admin.credential.cert(serviceAccount)
-//   });
-// } else {
-//   console.error("Firebase Admin SDK not initialized due to service account error.");
-// }
+if (serviceAccount) {
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+  });
+} else {
+  console.error("Firebase Admin SDK not initialized due to service account error.");
+}
 
-// if (!process.env.FB_SERVICE_KEY) {
-//   throw new Error("Missing FB_SERVICE_KEY in environment variables");
-// }
+if (!process.env.FB_SERVICE_KEY) {
+  throw new Error("Missing FB_SERVICE_KEY in environment variables");
+}
 
 
 
@@ -117,6 +117,32 @@ async function run() {
       const result = await usersCollection.find().sort({ createdAt: -1 }).toArray()
       res.send(result)
     });
+
+
+
+
+
+    app.get('/top-contributors', async (req, res) => {
+      try {
+        const topContributors = await queriesCollection.aggregate([
+          {
+            $group: {
+              _id: "$userEmail",
+              userName: { $first: "$userName" },
+              userPhoto: { $first: "$userPhoto" },
+              totalPosts: { $sum: 1 }
+            }
+          },
+          { $sort: { totalPosts: -1 } },
+          { $limit: 4 }
+        ]).toArray();
+
+        res.send(topContributors);
+      } catch (error) {
+        res.status(500).send({ success: false, message: 'Failed to load top contributors' });
+      }
+    });
+
 
 
 

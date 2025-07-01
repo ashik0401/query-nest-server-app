@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "A dynamic and responsive web application that allows users to post queries about products they wish to avoid and get product recommendations from other users. The platform promotes informed decision-making through community feedback and suggestions.",
   "dependencies": {
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -20,5 +20,6 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.17.0",
     "nodemon": "^3.1.10"
-  }
+  },
+  "devDependencies": {}
 }
