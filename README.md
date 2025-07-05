@@ -84,16 +84,6 @@ The Product Recommendation System helps users to:
 - dotenv
 - cookie-parser
 
-## 📁 Folder Structure Highlights
-
-- `/client`
-  - `components/` – Reusable UI components
-  - `pages/` – Route-based components (Home, Queries, Login, etc.)
-  - `hooks/` – Custom hooks like useAuth
-- `/server`
-  - `routes/` – Query and recommendation APIs
-  - `middlewares/` – JWT and Firebase verification
-  - `models/` – MongoDB collections and schema logic
 
 ## 📜 Functional Requirements Covered
 
