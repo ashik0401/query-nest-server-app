@@ -98,6 +98,53 @@ The Product Recommendation System helps users to:
 - Environment variable security
 - Deployment with CORS and route reload support
 
+ ## How to Run This Project Locally
+## 1️⃣ Clone the Repository
+Open your terminal and run:
+
+## 2️⃣ Setup the Client (Frontend)
+Go into the client folder:
+
+cd client
+Install dependencies:
+
+npm install
+Create a .env file in the client folder and add your Firebase configuration:
+
+
+- VITE_apiKey=YOUR_FIREBASE_API_KEY
+- VITE_authDomain=YOUR_FIREBASE_AUTH_DOMAIN
+- VITE_projectId=YOUR_FIREBASE_PROJECT_ID
+- VITE_storageBucket=YOUR_FIREBASE_STORAGE_BUCKET
+- VITE_messagingSenderId=YOUR_FIREBASE_MESSAGING_SENDER_ID
+- VITE_appId=YOUR_FIREBASE_APP_ID
+- VITE_serverUrl=http://localhost:5000
+- Start the frontend:
+
+
+npm run dev
+The frontend should now run on http://localhost:5173 (Vite default).
+
+## 3️⃣ Setup the Server (Backend)
+Open another terminal and go to the server folder:
+
+
+cd ../server
+Install dependencies:
+
+npm install
+Create a .env file in the server folder with:
+
+
+- PORT=5000
+- DB_URI=YOUR_MONGODB_CONNECTION_STRING
+- ACCESS_TOKEN_SECRET=YOUR_SECRET_KEY
+- CLIENT_URL=http://localhost:5173
+- Start the backend server:
+
+
+npm run dev
+
 ## ✅ Deployment Checkpoints
 
 - No CORS/404/504 issues
