@@ -2,9 +2,11 @@
 
 A dynamic and responsive web application that allows users to post queries about products they wish to avoid and get product recommendations from other users. The platform promotes informed decision-making through community feedback and suggestions.
 
+![BiteLog Screenshot](https://i.postimg.cc/76FfsNn3/Screenshot-2025-06-28-195228.png)
+
 ## 🌐 Live Site
 
-[Visit Live site](https://query-nest-two.vercel.app/)
+[Visit Live Website](https://query-nest-web-13121.web.app/)
 
 ## 🚀 Project Purpose
 
@@ -33,6 +35,7 @@ The Product Recommendation System helps users to:
 ### Extra Home Page Components
 - **TrendingDiscussions**: Highlights popular discussions.
 - **WhyChooseUs**: Emphasizes the platform's value and vision.
+- **TopContributors**: Showcases the most active or impactful users on the platform.
 
 ### UI/UX
 - Beautiful, responsive design for mobile, tablet, and desktop.
@@ -83,16 +86,6 @@ The Product Recommendation System helps users to:
 - dotenv
 - cookie-parser
 
-## 📁 Folder Structure Highlights
-
-- `/client`
-  - `components/` – Reusable UI components
-  - `pages/` – Route-based components (Home, Queries, Login, etc.)
-  - `hooks/` – Custom hooks like useAuth
-- `/server`
-  - `routes/` – Query and recommendation APIs
-  - `middlewares/` – JWT and Firebase verification
-  - `models/` – MongoDB collections and schema logic
 
 ## 📜 Functional Requirements Covered
 
@@ -107,6 +100,53 @@ The Product Recommendation System helps users to:
 - Environment variable security
 - Deployment with CORS and route reload support
 
+ ## How to Run This Project Locally
+## 1️⃣ Clone the Repository
+Open your terminal and run:
+
+## 2️⃣ Setup the Client (Frontend)
+Go into the client folder:
+
+cd client
+Install dependencies:
+
+npm install
+Create a .env file in the client folder and add your Firebase configuration:
+
+
+- VITE_apiKey=YOUR_FIREBASE_API_KEY
+- VITE_authDomain=YOUR_FIREBASE_AUTH_DOMAIN
+- VITE_projectId=YOUR_FIREBASE_PROJECT_ID
+- VITE_storageBucket=YOUR_FIREBASE_STORAGE_BUCKET
+- VITE_messagingSenderId=YOUR_FIREBASE_MESSAGING_SENDER_ID
+- VITE_appId=YOUR_FIREBASE_APP_ID
+- VITE_serverUrl=http://localhost:5000
+- Start the frontend:
+
+
+npm run dev
+The frontend should now run on http://localhost:5173 (Vite default).
+
+## 3️⃣ Setup the Server (Backend)
+Open another terminal and go to the server folder:
+
+
+cd ../server
+Install dependencies:
+
+npm install
+Create a .env file in the server folder with:
+
+
+- PORT=5000
+- DB_URI=YOUR_MONGODB_CONNECTION_STRING
+- ACCESS_TOKEN_SECRET=YOUR_SECRET_KEY
+- CLIENT_URL=http://localhost:5173
+- Start the backend server:
+
+
+npm run dev
+
 ## ✅ Deployment Checkpoints
 
 - No CORS/404/504 issues
@@ -118,5 +158,4 @@ The Product Recommendation System helps users to:
 ## 👨‍💻 Author
 
 **Ashik Mahmud**  
-
 
