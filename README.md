@@ -2,7 +2,7 @@
 
 A dynamic and responsive web application that allows users to post queries about products they wish to avoid and get product recommendations from other users. The platform promotes informed decision-making through community feedback and suggestions.
 
-![BiteLog Screenshot](https://i.postimg.cc/76FfsNn3/Screenshot-2025-06-28-195228.png)
+![BiteLog Screenshot](https://i.postimg.cc/wvn5Tv3Q/Screenshot-2025-08-10-130008.png)
 
 ## 🌐 Live Site
 
